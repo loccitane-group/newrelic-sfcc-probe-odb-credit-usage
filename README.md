@@ -1,6 +1,10 @@
 # newrelic-sfcc-probe-odb-credit-usage
 JS Script for NewRelic Probes to get Salesforce B2C Commerce Cloud On-Demand Sandboxes credit usage
 
+<p align="center">
+<img width="719" alt="image" src="https://user-images.githubusercontent.com/11783843/207579878-916a4362-fa7e-4520-b5a7-8077403a66d0.png">
+</p>
+
 ## Install
 On NewRelic, create a new Synthetic monitor with type `Endpoint availability Scripted API`, configure it to run on a regular basis (e.g. every day), then on `Write script` panel paste the code in `index.js` by inserting your SFCC contract start date on `contract_start_date` constant and the Sandbox API client id and secrets created on Account Manager.
 
