@@ -1,16 +1,19 @@
+// ----------------------------  SETTINGS --------------------------------
 
 /*
 Change this date by the starting date of your B2C Commerce Cloud contract,
 so that the credit consumption will be calculated since this date.
 */
-const contract_start_date = '2018-01-01';
+const CONTRACT_START_DATE = '2018-01-01';
 
 
 /*
 Add here your Sandbox API client id and secret from the Account Manager.
 */
-const client_id = 'YOUR SANDBOX API CLIENT ID';
-const client_secret = 'YOUR SANDBOX API CLIENT SECRET';
+const CLIENT_ID = 'YOUR SANDBOX API CLIENT ID';
+const CLIENT_SECRET = 'YOUR SANDBOX API CLIENT SECRET';
+
+// ----------------------------  PROGRAM --------------------------------
 
 if (https == null) {
     var https = require('https');
@@ -26,8 +29,8 @@ var options = {
     'Content-Type': 'application/x-www-form-urlencoded'
   },
   'auth': {
-    user: client_id,
-    password: client_secret
+    user: CLIENT_ID,
+    password: CLIENT_SECRET
   },
   'maxRedirects': 20
 };
@@ -50,7 +53,7 @@ var today = (new Date()).toISOString().substring(0, 10);
 var options = {
   'method': 'GET',
   'hostname': 'admin.us01.dx.commercecloud.salesforce.com',
-  'path': '/api/v1/realms/bdtw/usage?from=' + contract_start_date + '&to=' + today,
+  'path': '/api/v1/realms/bdtw/usage?from=' + CONTRACT_START_DATE + '&to=' + today,
   'headers': {
     'Authorization': 'Bearer ' + access_token
   },
